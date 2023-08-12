@@ -1,0 +1,21 @@
+#include <iostream>
+#include <set>
+
+int main() {
+    std::multiset<int> mset = {5, 10, 3, 8, 15, 2, 10, 15, 8};
+    int k = 3; // Number of largest elements to find
+
+    std::cout << "K largest elements:" << std::endl;
+
+    // Create a reverse iterator starting from the end of the multiset
+    std::multiset<int>::reverse_iterator rit = mset.rbegin();
+
+    // Iterate through k largest elements
+    for (int i = 0; i < k && rit != mset.rend(); ++i, ++rit) {
+        std::cout << *rit << " ";
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
